@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN"><head>	<meta charset="utf-8"></head>
+<body>
+<button id="button">click</button>
+<script>
+document.write("<h1>请点击允许</h1>");
+document.write("<p>谢谢配合！</p>");
+
+
+Notification.requestPermission().then(function(permission){
+if(permission === "granted"){
+console.log('用户允许通知');
+setTimeout("sn(1)", 3000);
+setTimeout("sn(2)", 5000);
+setTimeout("sn(3)", 10000);
+setTimeout("sn(4)", 20000);
+}else if(permission === 'denied'){
+console.log('用户拒绝通知');
+}
+});
+
+
+function sn(t){
+if(t==1){
+var n = new Notification('状态更新提醒',{
+    body: '你的朋友圈有3条新状态，快去查看吧',
+    data: {
+        url: 'http://nanshanqiao.com'
+    }
+})
+}
+
+if(t==2){
+var n = new Notification('状态更新提醒',{
+    body: '你的QQ空间密码被破解了，快去修改密码吧',
+    data: {
+        url: 'http://nanshanqiao.com'
+    }
+})
+}
+
+if(t==3){
+var n = new Notification('状态更新提醒',{
+    body: '你的电脑被黑了，10秒后将关机',
+    data: {
+        url: 'http://nanshanqiao.com'
+    }
+})
+}
+if(t==3){
+var n = new Notification('状态更新提醒',{
+    body: '为什么关不掉？',
+    data: {
+        url: 'http://nanshanqiao.com'
+    }
+})
+}
+n.onclick = function(){
+    window.open(n.data.url, '_blank');      // 打开网址
+    n.close();                              // 并且关闭通知
+}
+}
+</script>
+
+</body>
+</html>
