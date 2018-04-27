@@ -1,8 +1,8 @@
 # hello-world
 a short description for hello-world
 
-hi I am Jack. And this is a new edits.
+hi I am Duke. And this is a new edits.
 
- flex-add
-这是一个关于flexbox基础的骰子布局
- [demo](https://shercohome.github.io/hello-world/t.html)   
+For HTML5 桌面通知：Notification API
+
+ [这是一个测试页](https://shercohome.github.io/hello-world/t.html) 
